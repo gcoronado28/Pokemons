@@ -1,0 +1,28 @@
+<p id="notice"><font color="green"><%= notice %></font></p>
+<p id="notice"><font color="red"><%= alert %></font></p>
+
+<h2>Pokemons</h2>
+
+<%= link_to 'Import', upload_path, method: :post, class: 'btn btn-link' %>
+<%= link_to 'Delete', destroy_all_path, method: :delete, class: 'btn btn-link' %>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">Height</th>
+      <th scope="col">Weight</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @pokemons.each do |p| %>
+      <tr>
+        <th scope="row"><%= p.id %></th>
+        <td><%= p.name %></td>
+        <td><%= p.height %></td>
+        <td><%= p.weight %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
